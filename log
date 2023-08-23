@@ -12,3 +12,251 @@ list.c:34:7: error: ‘List’ {aka ‘struct List’} has no member named ‘si
       |       ^~
 Compilation failed
 fdcb77d
+Wed 23 Aug 2023 02:22:22 AM UTC: 
+ list.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+In file included from test.c:5:
+list.c:31:16: error: redefinition of ‘struct List’
+   31 | typedef struct List{
+      |                ^~~~
+list.c:14:8: note: originally defined here
+   14 | struct List {
+      |        ^~~~
+list.c:35:3: error: conflicting types for ‘List’; have ‘struct List’
+   35 | } List;
+      |   ^~~~
+list.c:20:14: note: previous declaration of ‘List’ with type ‘List’ {aka ‘struct List’}
+   20 | typedef List List;
+      |              ^~~~
+list.c:37:8: error: conflicting types for ‘createList’; have ‘List *()’
+   37 | List * createList() {
+      |        ^~~~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:6:8: note: previous declaration of ‘createList’ with type ‘List *(void)’ {aka ‘struct List *(void)’}
+    6 | List * createList(void);
+      |        ^~~~~~~~~~
+In file included from test.c:5:
+list.c:46:8: error: conflicting types for ‘firstList’; have ‘void *(List *)’
+   46 | void * firstList(List * list) {
+      |        ^~~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:8:8: note: previous declaration of ‘firstList’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+    8 | void * firstList(List * list);
+      |        ^~~~~~~~~
+In file included from test.c:5:
+list.c:50:8: error: conflicting types for ‘nextList’; have ‘void *(List *)’
+   50 | void * nextList(List * list) {
+      |        ^~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:10:8: note: previous declaration of ‘nextList’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   10 | void * nextList(List * list);
+      |        ^~~~~~~~
+In file included from test.c:5:
+list.c:54:8: error: conflicting types for ‘lastList’; have ‘void *(List *)’
+   54 | void * lastList(List * list) {
+      |        ^~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:12:8: note: previous declaration of ‘lastList’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   12 | void * lastList(List * list);
+      |        ^~~~~~~~
+In file included from test.c:5:
+list.c:58:8: error: conflicting types for ‘prevList’; have ‘void *(List *)’
+   58 | void * prevList(List * list) {
+      |        ^~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:14:8: note: previous declaration of ‘prevList’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   14 | void * prevList(List * list);
+      |        ^~~~~~~~
+In file included from test.c:5:
+list.c:62:6: error: conflicting types for ‘pushFront’; have ‘void(List *, void *)’
+   62 | void pushFront(List * list, void * data) {
+      |      ^~~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:16:6: note: previous declaration of ‘pushFront’ with type ‘void(List *, void *)’ {aka ‘void(struct List *, void *)’}
+   16 | void pushFront(List * list, void * data);
+      |      ^~~~~~~~~
+In file included from test.c:5:
+list.c:65:6: error: conflicting types for ‘pushBack’; have ‘void(List *, void *)’
+   65 | void pushBack(List * list, void * data) {
+      |      ^~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:18:6: note: previous declaration of ‘pushBack’ with type ‘void(List *, void *)’ {aka ‘void(struct List *, void *)’}
+   18 | void pushBack(List * list, void * data);
+      |      ^~~~~~~~
+In file included from test.c:5:
+list.c: In function ‘pushBack’:
+list.c:66:25: error: ‘List’ has no member named ‘tail’
+   66 |     list->current = list->tail;
+      |                         ^~
+list.c:67:17: error: passing argument 1 of ‘pushCurrent’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   67 |     pushCurrent(list,data);
+      |                 ^~~~
+      |                 |
+      |                 List *
+In file included from list.c:4,
+                 from test.c:5:
+list.h:20:25: note: expected ‘List *’ {aka ‘struct List *’} but argument is of type ‘List *’
+   20 | void pushCurrent(List * list, void * data);
+      |                  ~~~~~~~^~~~
+In file included from test.c:5:
+list.c: At top level:
+list.c:70:6: error: conflicting types for ‘pushCurrent’; have ‘void(List *, void *)’
+   70 | void pushCurrent(List * list, void * data) {
+      |      ^~~~~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:20:6: note: previous declaration of ‘pushCurrent’ with type ‘void(List *, void *)’ {aka ‘void(struct List *, void *)’}
+   20 | void pushCurrent(List * list, void * data);
+      |      ^~~~~~~~~~~
+In file included from test.c:5:
+list.c:73:8: error: conflicting types for ‘popFront’; have ‘void *(List *)’
+   73 | void * popFront(List * list) {
+      |        ^~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:22:8: note: previous declaration of ‘popFront’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   22 | void * popFront(List * list);
+      |        ^~~~~~~~
+In file included from test.c:5:
+list.c: In function ‘popFront’:
+list.c:75:23: error: passing argument 1 of ‘popCurrent’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   75 |     return popCurrent(list);
+      |                       ^~~~
+      |                       |
+      |                       List *
+In file included from list.c:4,
+                 from test.c:5:
+list.h:26:26: note: expected ‘List *’ {aka ‘struct List *’} but argument is of type ‘List *’
+   26 | void * popCurrent(List * list);
+      |                   ~~~~~~~^~~~
+In file included from test.c:5:
+list.c: At top level:
+list.c:78:8: error: conflicting types for ‘popBack’; have ‘void *(List *)’
+   78 | void * popBack(List * list) {
+      |        ^~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:24:8: note: previous declaration of ‘popBack’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   24 | void * popBack(List * list);
+      |        ^~~~~~~
+In file included from test.c:5:
+list.c: In function ‘popBack’:
+list.c:79:25: error: ‘List’ has no member named ‘tail’
+   79 |     list->current = list->tail;
+      |                         ^~
+list.c:80:23: error: passing argument 1 of ‘popCurrent’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   80 |     return popCurrent(list);
+      |                       ^~~~
+      |                       |
+      |                       List *
+In file included from list.c:4,
+                 from test.c:5:
+list.h:26:26: note: expected ‘List *’ {aka ‘struct List *’} but argument is of type ‘List *’
+   26 | void * popCurrent(List * list);
+      |                   ~~~~~~~^~~~
+In file included from test.c:5:
+list.c: At top level:
+list.c:83:8: error: conflicting types for ‘popCurrent’; have ‘void *(List *)’
+   83 | void * popCurrent(List * list) {
+      |        ^~~~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:26:8: note: previous declaration of ‘popCurrent’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   26 | void * popCurrent(List * list);
+      |        ^~~~~~~~~~
+In file included from test.c:5:
+list.c:87:6: error: conflicting types for ‘cleanList’; have ‘void(List *)’
+   87 | void cleanList(List * list) {
+      |      ^~~~~~~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:28:6: note: previous declaration of ‘cleanList’ with type ‘void(List *)’ {aka ‘void(struct List *)’}
+   28 | void cleanList(List * list);
+      |      ^~~~~~~~~
+test.c: In function ‘initialize_exList’:
+test.c:56:15: error: ‘List’ has no member named ‘tail’
+   56 |      L->head=L->tail=createNode(j);
+      |               ^~
+test.c:65:11: error: ‘List’ has no member named ‘tail’
+   65 |          L->tail->next=n;
+      |           ^~
+test.c:66:19: error: ‘List’ has no member named ‘tail’
+   66 |          n->prev=L->tail;
+      |                   ^~
+test.c:67:11: error: ‘List’ has no member named ‘tail’
+   67 |          L->tail=n;
+      |           ^~
+test.c: In function ‘initialize_emptyList’:
+test.c:78:15: error: ‘List’ has no member named ‘tail’
+   78 |      L->head=L->tail=NULL;
+      |               ^~
+test.c: In function ‘test_create’:
+test.c:89:28: error: ‘List’ has no member named ‘tail’
+   89 |     if(L->head != NULL || L->tail !=NULL || L->current!=NULL){
+      |                            ^~
+test.c: In function ‘test_first_next’:
+test.c:149:19: error: ‘List’ has no member named ‘tail’
+  149 |     L->current = L->tail;
+      |                   ^~
+test.c: In function ‘test_last_prev’:
+test.c:188:23: error: ‘List’ has no member named ‘tail’
+  188 |     if(L->current != L->tail){
+      |                       ^~
+test.c:205:23: error: ‘List’ has no member named ‘tail’
+  205 |     if(L->current != L->tail->prev){
+      |                       ^~
+test.c: In function ‘test_pushfront’:
+test.c:249:9: error: ‘List’ has no member named ‘tail’
+  249 |     if(L->tail==NULL) {
+      |         ^~
+test.c:254:20: error: ‘List’ has no member named ‘tail’
+  254 |     if(L->head != L->tail){
+      |                    ^~
+test.c: In function ‘test_pushcurrent’:
+test.c:327:17: error: ‘List’ has no member named ‘tail’
+  327 |     L->current=L->tail;
+      |                 ^~
+test.c:328:16: error: ‘List’ has no member named ‘tail’
+  328 |     Node* aux=L->tail;
+      |                ^~
+test.c:335:9: error: ‘List’ has no member named ‘tail’
+  335 |     if(L->tail == NULL || L->tail->data != j){
+      |         ^~
+test.c:335:28: error: ‘List’ has no member named ‘tail’
+  335 |     if(L->tail == NULL || L->tail->data != j){
+      |                            ^~
+test.c:340:41: error: ‘List’ has no member named ‘tail’
+  340 |     if(aux->next == NULL || aux->next!=L->tail){
+      |                                         ^~
+test.c:345:9: error: ‘List’ has no member named ‘tail’
+  345 |     if(L->tail->prev == NULL || L->tail->prev!=aux){
+      |         ^~
+test.c:345:34: error: ‘List’ has no member named ‘tail’
+  345 |     if(L->tail->prev == NULL || L->tail->prev!=aux){
+      |                                  ^~
+test.c: In function ‘test_popcurrent’:
+test.c:410:17: error: ‘List’ has no member named ‘tail’
+  410 |     L->current=L->tail;
+      |                 ^~
+test.c:411:10: error: ‘List’ has no member named ‘tail’
+  411 |     aux=L->tail->prev;
+      |          ^~
+test.c:415:10: error: ‘List’ has no member named ‘tail’
+  415 |     aux=L->tail->prev;
+      |          ^~
+test.c:421:9: error: ‘List’ has no member named ‘tail’
+  421 |     if(L->tail != aux){
+      |         ^~
+test.c:426:9: error: ‘List’ has no member named ‘tail’
+  426 |     if(L->tail->next != NULL){
+      |         ^~
+cc1: all warnings being treated as errors
+Compilation failed
+46425bf

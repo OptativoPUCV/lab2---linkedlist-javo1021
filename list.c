@@ -28,6 +28,12 @@ Node * createNode(void * data) {
     return new;
 }
 
+typedef struct List{
+  Node* head;
+  int size;
+  Node* current;
+} List;
+
 List * createList() {
   List* list = (List*) malloc (sizeof(List));
   list->head = NULL;
