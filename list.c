@@ -34,10 +34,10 @@ List * createList() {
   list->tail = NULL;
   list->current = NULL;
   
-  return list;
 }
 
-void * firstList(List * list) { return NULL;
+void * firstList(List * list) {
+    return NULL;
 }
 
 void * nextList(List * list) {
@@ -53,8 +53,6 @@ void * prevList(List * list) {
 }
 
 void pushFront(List * list, void * data) {
-  Node* n = 
-  
 }
 
 void pushBack(List * list, void * data) {
