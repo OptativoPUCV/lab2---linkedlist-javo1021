@@ -395,3 +395,20 @@ Wed 23 Aug 2023 02:44:18 AM UTC:
  tests:  2|5
 total_score: 15/70
 af27ad9
+Wed 23 Aug 2023 02:48:12 AM UTC: 
+ list.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘nextList’:
+list.c:47:27: error: expected ‘)’ before ‘{’ token
+   47 |   if(list->current == NULL{
+      |     ~                     ^
+list.c:55:1: error: expected expression before ‘}’ token
+   55 | }
+      | ^
+list.c:55:1: error: control reaches end of non-void function [-Werror=return-type]
+   55 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+8244713
