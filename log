@@ -260,3 +260,13 @@ test.c:426:9: error: ‘List’ has no member named ‘tail’
 cc1: all warnings being treated as errors
 Compilation failed
 46425bf
+Wed 23 Aug 2023 02:23:46 AM UTC: 
+ list.c | 6 ------
+ 1 file changed, 6 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:34:7: error: ‘List’ {aka ‘struct List’} has no member named ‘size’
+   34 |   list->size = 0;
+      |       ^~
+Compilation failed
+800d495
