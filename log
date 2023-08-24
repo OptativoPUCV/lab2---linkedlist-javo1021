@@ -508,3 +508,14 @@ list.c:154:1: error: control reaches end of non-void function [-Werror=return-ty
 cc1: all warnings being treated as errors
 Compilation failed
 6c84305
+Thu 24 Aug 2023 06:41:55 PM UTC: 
+ list.c | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:158:8: error: returning ‘int’ from a function with return type ‘void *’ makes pointer from integer without a cast [-Werror=int-conversion]
+  158 | return dato;
+      |        ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+420d87b

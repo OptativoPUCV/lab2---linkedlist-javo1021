@@ -137,19 +137,25 @@ void * popBack(List * list) {
 void * popCurrent(List * list) {
     if (list->current == NULL) return NULL;
   Node* actual = list->current;
-  int data = *(int* ) (actual->data);
+  int dato = *(int* ) (actual->data);
 
   if(actual->prev != NULL){
     actual->prev->next = actual->next;
   } else {
     list->head = actual->next;
   }
+  if(actual->next != NULL){
+    actual->next->prev = actual->prev;
+  } else{
+    list->tail = actual->prev;
+  }
 
+  if(list->current == actual){
+    list->current = actual->next;
+  }
+  free(actual);
 
-
-
-
-
+return dato;
   
 }
 
