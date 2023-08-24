@@ -459,3 +459,15 @@ Thu 24 Aug 2023 03:08:14 AM UTC:
  tests:  10|2
 total_score: 45/70
 4eb394a
+Thu 24 Aug 2023 03:22:25 AM UTC: 
+ list.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+In file included from test.c:5:
+list.c:114:32: error: ‘data’ undeclared here (not in a function)
+  114 |   Node* nuevoNodo = createNode(data);
+      |                                ^~~~
+list.c:116:1: error: expected identifier or ‘(’ before ‘}’ token
+  116 | }
+      | ^
+Compilation failed
+f01168e
