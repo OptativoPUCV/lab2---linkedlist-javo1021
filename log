@@ -519,3 +519,9 @@ list.c:158:8: error: returning ‘int’ from a function with return type ‘voi
 cc1: all warnings being treated as errors
 Compilation failed
 420d87b
+Thu 24 Aug 2023 06:43:46 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  12|0
+total_score: 70/70
+026badb
